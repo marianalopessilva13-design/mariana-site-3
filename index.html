@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRISMA — Explore futuros possíveis</title>
+<meta name="description" content="PRISMA é uma plataforma de orientação de carreira para estudantes explorarem profissões, habilidades e caminhos possíveis para o futuro.">
+
+<!-- Google Fonts: Unbounded (títulos), Spectral (editorial), Inter (interface) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ RUÍDO / GRÃO DE FUNDO ============ -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ CABEÇALHO ============ -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="#topo" class="logo" aria-label="PRISMA — página inicial">
+      <span class="logo-mark" aria-hidden="true">
+        <span class="beam-in"></span>
+        <span class="ray ray-1"></span>
+        <span class="ray ray-2"></span>
+        <span class="ray ray-3"></span>
+        <span class="ray ray-4"></span>
+      </span>
+      <span class="logo-text">PRISMA</span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="#topo" class="nav-link" data-section="topo">Início</a></li>
+        <li><a href="#areas" class="nav-link" data-section="areas">Áreas</a></li>
+        <li><a href="#profissoes" class="nav-link" data-section="profissoes">Profissões</a></li>
+        <li><a href="#dna" class="nav-link" data-section="dna">Teste de perfil</a></li>
+        <li><a href="#comparar" class="nav-link" data-section="comparar">Comparar</a></li>
+        <li><a href="#futuro" class="nav-link" data-section="futuro">Profissões do futuro</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#areas" class="btn btn-primary btn-small">Explorar agora</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menu mobile -->
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Navegação mobile">
+    <a href="#topo" class="nav-link">Início</a>
+    <a href="#areas" class="nav-link">Áreas</a>
+    <a href="#profissoes" class="nav-link">Profissões</a>
+    <a href="#dna" class="nav-link">Teste de perfil</a>
+    <a href="#comparar" class="nav-link">Comparar</a>
+    <a href="#futuro" class="nav-link">Profissões do futuro</a>
+    <a href="#areas" class="btn btn-primary btn-small">Explorar agora</a>
+  </nav>
+</header>
+
+<main id="topo">
+
+  <!-- ============ SEÇÃO 1 — HERO ============ -->
+  <section class="hero" id="hero" aria-label="Abertura">
+    <div class="hero-particles" id="hero-particles" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Orientação de carreira para o Ensino Médio</p>
+        <h1 class="hero-title">
+          Seu futuro não tem uma única direção.
+          <span class="hero-highlight">Explore todas.</span>
+        </h1>
+        <p class="hero-text">Conheça profissões, descubra habilidades, compare diferentes caminhos e encontre possibilidades que façam sentido para quem você deseja se tornar.</p>
+        <div class="hero-actions">
+          <a href="#areas" class="btn btn-primary">Explorar profissões</a>
+          <a href="#dna" class="btn btn-ghost">Descobrir meu perfil</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" id="hero-visual" aria-hidden="true">
+        <div class="prism-scene" id="prism-scene">
+          <div class="prism-beam-in"></div>
+          <div class="prism3d">
+            <div class="prism-face face-front"></div>
+            <div class="prism-face face-back"></div>
+            <div class="prism-face face-left"></div>
+            <div class="prism-face face-right"></div>
+            <div class="prism-face face-top"></div>
+            <div class="prism-face face-bottom"></div>
+          </div>
+          <div class="prism-rays">
+            <span style="--c:#EF476F"></span>
+            <span style="--c:#6C63FF"></span>
+            <span style="--c:#FF8A34"></span>
+            <span style="--c:#16C79A"></span>
+            <span style="--c:#FF4FA3"></span>
+            <span style="--c:#00B8D9"></span>
+          </div>
+          <div class="floating-icons" id="floating-icons"></div>
+        </div>
+      </div>
+    </div>
+
+    <button class="scroll-cue" id="scroll-cue" aria-label="Rolar para o conteúdo">
+      <span></span>
+      <i data-lucide="chevron-down"></i>
+    </button>
+  </section>
+
+  <!-- ============ SEÇÃO 2 — MANIFESTO ============ -->
+  <section class="manifesto" id="manifesto" aria-label="Manifesto">
+    <div class="section-inner">
+      <span class="section-number">01</span>
+      <h2 class="editorial-title">Escolher uma profissão não é escolher apenas um emprego.</h2>
+      <p class="editorial-text">É escolher problemas que você gostaria de resolver, ambientes em que deseja estar, habilidades que pretende desenvolver e o tipo de impacto que gostaria de deixar no mundo.</p>
+
+      <div class="manifesto-grid">
+        <div class="manifesto-card">
+          <span class="manifesto-num">01</span>
+          <h3>Quem você é</h3>
+          <p>Seus valores, seu jeito de pensar e o que te move todos os dias.</p>
+        </div>
+        <div class="manifesto-card">
+          <span class="manifesto-num">02</span>
+          <h3>O que você sabe fazer</h3>
+          <p>As habilidades que você já tem — e as que pode desenvolver com o tempo.</p>
+        </div>
+        <div class="manifesto-card">
+          <span class="manifesto-num">03</span>
+          <h3>Onde deseja chegar</h3>
+          <p>O tipo de vida, impacto e ambiente que você imagina para o seu futuro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEÇÃO 3 — CONSTELAÇÃO DE CARREIRAS ============ -->
+  <section class="constellation" id="areas" aria-label="Constelação de carreiras">
+    <div class="section-inner">
+      <span class="section-number">02</span>
+      <h2 class="section-title">Constelação de carreiras</h2>
+      <p class="section-lead">Cada área profissional possui sua própria linguagem, seus desafios e diferentes formas de transformar a sociedade.</p>
+
+      <div class="areas-grid" id="areas-grid"><!-- gerado via JS --></div>
+    </div>
+  </section>
+
+  <!-- ============ SEÇÃO 4 — PROFISSÕES EM DESTAQUE ============ -->
+  <section class="professions" id="profissoes" aria-label="Profissões em destaque">
+    <div class="section-inner">
+      <span class="section-number">03</span>
+      <h2 class="section-title">Profissões em destaque</h2>
+      <p class="section-lead">Explore em detalhes algumas profissões de diferentes áreas do conhecimento.</p>
+
+      <div class="professions-toolbar">
+        <div class="search-field">
+          <i data-lucide="search" aria-hidden="true"></i>
+          <input type="text" id="profession-search" placeholder="Qual profissão desperta sua curiosidade?" aria-label="Pesquisar profissão">
+        </div>
+        <div class="filter-chips" id="filter-chips" role="group" aria-label="Filtrar por área"><!-- gerado via JS --></div>
+      </div>
+
+      <div class="professions-grid" id="professions-grid"><!-- gerado via JS --></div>
+      <p class="empty-state" id="professions-empty" hidden>Ainda não encontramos essa profissão. Tente outra palavra ou explore uma área.</p>
+    </div>
+  </section>
+
+  <!-- ============ SEÇÃO 5 — DNA PROFISSIONAL ============ -->
+  <section class="dna-test" id="dna" aria-label="Teste de DNA profissional">
+    <div class="section-inner">
+      <span class="section-number">04</span>
+      <h2 class="section-title">Descubra seu DNA profissional</h2>
+      <p class="section-lead">Não existe um resultado capaz de decidir seu futuro. Este teste serve apenas como ponto de partida para você observar interesses, habilidades e preferências.</p>
+
+      <div class="dna-panel" id="dna-panel">
+        <div class="dna-intro" id="dna-intro">
+          <p>São 10 perguntas rápidas. Escolha sempre a opção que mais combina com você — não existe resposta certa.</p>
+          <button class="btn btn-primary" id="dna-start">Começar teste</button>
+        </div>
+
+        <div class="dna-quiz" id="dna-quiz" hidden>
+          <div class="dna-progress-track" aria-hidden="true"><div class="dna-progress-fill" id="dna-progress-fill"></div></div>
+          <p class="dna-question-count" id="dna-question-count"></p>
+          <h3 class="dna-question" id="dna-question"></h3>
+          <div class="dna-options" id="dna-options"></div>
+        </div>
+
+        <div class="dna-result" id="dna-result" hidden>
+          <h3>Seu perfil predominante</h3>
+          <div class="dna-bars" id="dna-bars"></div>
+          <p class="dna-description" id="dna-description"></p>
+          <h4>Áreas mais compatíveis</h4>
+          <div class="dna-areas" id="dna-areas"></div>
+          <h4>Profissões sugeridas</h4>
+          <div class="dna-suggestions" id="dna-suggestions"></div>
+          <button class="btn btn-ghost" id="dna-restart">Refazer o teste</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEÇÃO 6 — COMPARADOR DE FUTUROS ============ -->
+  <section class="comparator" id="comparar" aria-label="Comparador de futuros">
+    <div class="section-inner">
+      <span class="section-number">05</span>
+      <h2 class="section-title">Compare caminhos, não apenas profissões</h2>
+      <p class="section-lead">Escolha de duas a três profissões para comparar lado a lado.</p>
+
+      <div class="comparator-picker" id="comparator-picker" aria-label="Escolha profissões para comparar"></div>
+      <div class="comparator-table-wrap" id="comparator-table-wrap" hidden>
+        <div class="comparator-table" id="comparator-table"></div>
+      </div>
+      <p class="comparator-hint" id="comparator-hint">Selecione ao menos duas profissões acima para ver a comparação.</p>
+    </div>
+  </section>
+
+  <!-- ============ SEÇÃO 7 — MAPA DE HABILIDADES ============ -->
+  <section class="skills-map" id="habilidades" aria-label="Mapa de habilidades">
+    <div class="section-inner">
+      <span class="section-number">06</span>
+      <h2 class="section-title">Comece pelo que desperta sua curiosidade</h2>
+      <p class="section-lead">Escolha uma habilidade e veja em quais profissões ela faz diferença.</p>
+
+      <div class="skills-buttons" id="skills-buttons"></div>
+      <div class="skills-result" id="skills-result" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- ============ SEÇÃO 8 — PROFISSÕES POUCO CONHECIDAS ============ -->
+  <section class="unknown-careers" id="pouco-conhecidas" aria-label="Profissões pouco conhecidas">
+    <div class="section-inner">
+      <span class="section-number">07</span>
+      <h2 class="section-title">Carreiras que talvez ainda não tenham apresentado a você</h2>
+      <p class="section-lead">O mundo do trabalho é muito maior do que as profissões mais faladas.</p>
+
+      <div class="unknown-grid" id="unknown-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ SEÇÃO 9 — PROFISSÕES DO FUTURO ============ -->
+  <section class="future-careers" id="futuro" aria-label="Profissões do futuro">
+    <div class="section-inner">
+      <span class="section-number">08</span>
+      <h2 class="section-title">O futuro já começou a trabalhar</h2>
+      <p class="section-lead">Algumas funções podem mudar, se combinar com outras ou receber novos nomes ao longo do tempo — mas os problemas que resolvem continuam relevantes.</p>
+
+      <div class="future-timeline" id="future-timeline"></div>
+    </div>
+  </section>
+
+  <!-- ============ SEÇÃO 10 — CAMINHOS ALÉM DA FACULDADE ============ -->
+  <section class="beyond-college" id="alem-da-faculdade" aria-label="Caminhos além da faculdade">
+    <div class="section-inner">
+      <span class="section-number">09</span>
+      <h2 class="section-title">Existem diferentes maneiras de construir uma carreira</h2>
+      <p class="section-lead">A graduação tradicional é um caminho possível — não o único.</p>
+
+      <div class="paths-grid" id="paths-grid"></div>
+      <h3 class="subheading">Exemplos de profissões técnicas e tecnológicas</h3>
+      <div class="tech-professions" id="tech-professions"></div>
+    </div>
+  </section>
+
+  <!-- ============ SEÇÃO 11 — UM DIA NA PROFISSÃO ============ -->
+  <section class="day-stories" id="um-dia" aria-label="Um dia na profissão">
+    <div class="section-inner">
+      <span class="section-number">10</span>
+      <h2 class="section-title">Um dia na profissão</h2>
+      <p class="section-lead">Uma simulação educativa simplificada — viva pequenas decisões e veja quais habilidades você mais usou.</p>
+
+      <div class="story-picker" id="story-picker"></div>
+      <div class="story-stage" id="story-stage" hidden></div>
+    </div>
+  </section>
+
+  <!-- ============ SEÇÃO 12 — MITOS SOBRE A ESCOLHA PROFISSIONAL ============ -->
+  <section class="myths" id="mitos" aria-label="Mitos sobre a escolha profissional">
+    <div class="section-inner">
+      <span class="section-number">11</span>
+      <h2 class="section-title">Mitos sobre escolher uma profissão</h2>
+      <p class="section-lead">Vire as cartas para ver o outro lado de cada frase.</p>
+
+      <div class="myths-grid" id="myths-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ SEÇÃO 13 — FAVORITOS ============ -->
+  <section class="favorites" id="favoritos" aria-label="Profissões favoritas">
+    <div class="section-inner">
+      <span class="section-number">12</span>
+      <h2 class="section-title">Seus favoritos</h2>
+      <p class="section-lead">Profissões que você salvou para olhar com mais calma depois.</p>
+
+      <div class="favorites-grid" id="favorites-grid"></div>
+      <p class="empty-state" id="favorites-empty">Você ainda não favoritou nenhuma profissão. Clique no ícone de coração nos cards para salvá-las aqui.</p>
+    </div>
+  </section>
+
+  <!-- ============ SEÇÃO 14 — FONTES E CONFIABILIDADE ============ -->
+  <section class="sources" id="fontes" aria-label="Fontes e confiabilidade">
+    <div class="section-inner">
+      <span class="section-number">13</span>
+      <h2 class="section-title">Como pesquisar uma profissão de forma confiável</h2>
+      <div class="sources-grid">
+        <ul class="sources-list">
+          <li><i data-lucide="landmark"></i> Sites oficiais de universidades</li>
+          <li><i data-lucide="shield-check"></i> Conselhos profissionais</li>
+          <li><i data-lucide="graduation-cap"></i> Instituições de ensino</li>
+          <li><i data-lucide="list-tree"></i> Classificação Brasileira de Ocupações</li>
+          <li><i data-lucide="building-2"></i> Portais públicos</li>
+          <li><i data-lucide="users"></i> Profissionais que realmente atuam na área</li>
+          <li><i data-lucide="calendar-days"></i> Feiras de profissões</li>
+          <li><i data-lucide="map-pin"></i> Visitas técnicas</li>
+          <li><i data-lucide="mic"></i> Entrevistas e relatos de rotina</li>
+        </ul>
+        <div class="sources-notice">
+          <i data-lucide="info" aria-hidden="true"></i>
+          <p>Informações sobre formação, mercado e remuneração podem variar conforme região, experiência, instituição, setor e momento econômico. Antes de tomar uma decisão, consulte fontes atualizadas e converse com profissionais da área.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEÇÃO 15 — CHAMADA FINAL ============ -->
+  <section class="final-cta" id="chamada-final" aria-label="Chamada final">
+    <div class="prism-converge" aria-hidden="true">
+      <div class="converge-core"></div>
+      <span style="--c:#EF476F"></span>
+      <span style="--c:#6C63FF"></span>
+      <span style="--c:#FF8A34"></span>
+      <span style="--c:#16C79A"></span>
+      <span style="--c:#FF4FA3"></span>
+      <span style="--c:#00B8D9"></span>
+    </div>
+    <div class="section-inner">
+      <h2 class="editorial-title">Você não precisa escolher todo o caminho hoje.</h2>
+      <p class="editorial-text">Mas pode começar conhecendo melhor suas possibilidades, seus interesses e as perguntas que deseja responder.</p>
+      <div class="hero-actions">
+        <a href="#dna" class="btn btn-primary" id="cta-redo-test">Refazer meu perfil</a>
+        <a href="#areas" class="btn btn-ghost">Explorar áreas</a>
+        <a href="#favoritos" class="btn btn-ghost">Ver meus favoritos</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ RODAPÉ ============ -->
+<footer class="site-footer">
+  <div class="section-inner footer-inner">
+    <div class="footer-brand">
+      <a href="#topo" class="logo" aria-label="PRISMA — página inicial">
+        <span class="logo-mark" aria-hidden="true">
+          <span class="beam-in"></span>
+          <span class="ray ray-1"></span><span class="ray ray-2"></span><span class="ray ray-3"></span><span class="ray ray-4"></span>
+        </span>
+        <span class="logo-text">PRISMA</span>
+      </a>
+      <p class="footer-tagline">Explore futuros possíveis.</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Navegação do rodapé">
+      <a href="#areas">Áreas</a>
+      <a href="#profissoes">Profissões</a>
+      <a href="#dna">Teste de perfil</a>
+      <a href="#comparar">Comparar</a>
+      <a href="#futuro">Profissões do futuro</a>
+      <a href="#favoritos">Favoritos</a>
+    </nav>
+
+    <div class="footer-meta">
+      <p>Projeto educacional criado para incentivar estudantes a explorar profissões, habilidades e diferentes possibilidades de futuro.</p>
+      <p class="footer-credit">Trabalho escolar — 1º ano do Ensino Médio.</p>
+      <p class="footer-disclaimer">As informações apresentadas têm caráter educativo e podem variar conforme região, instituição e momento econômico.</p>
+    </div>
+  </div>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+    <i data-lucide="arrow-up"></i>
+  </button>
+</footer>
+
+<!-- ============ MODAL DE PROFISSÃO ============ -->
+<div class="modal-overlay" id="modal-overlay" hidden>
+  <div class="modal" id="profession-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" id="modal-close" aria-label="Fechar">
+      <i data-lucide="x"></i>
+    </button>
+    <div class="modal-scroll" id="modal-scroll"><!-- conteúdo gerado via JS --></div>
+  </div>
+</div>
+
+<!-- ============ PAINEL LATERAL DE ÁREA ============ -->
+<div class="panel-overlay" id="panel-overlay" hidden>
+  <aside class="side-panel" id="area-panel" role="dialog" aria-modal="true" aria-labelledby="panel-title">
+    <button class="modal-close" id="panel-close" aria-label="Fechar">
+      <i data-lucide="x"></i>
+    </button>
+    <div class="modal-scroll" id="panel-scroll"><!-- conteúdo gerado via JS --></div>
+  </aside>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
