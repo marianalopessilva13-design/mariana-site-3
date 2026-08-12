@@ -18,6 +18,59 @@
 </head>
 <body>
 
+  <!-- AVALIAÇÃO DO SITE - NÃO ALTERA O RESTANTE DO SITE -->
+<div id="avaliacao-site" style="
+  text-align:center;
+  margin:50px auto 30px;
+  padding:25px 15px;
+  font-family:inherit;
+">
+  <p style="
+    margin:0 0 10px;
+    font-size:18px;
+    color:inherit;
+  ">
+    Gostou do site? 💜
+  </p>
+
+  <button id="coracao-avaliacao" aria-label="Avaliar o site com um coração" style="
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-size:42px;
+    line-height:1;
+    transition:transform 0.2s ease;
+    color:#bbb;
+  ">
+    ♡
+  </button>
+
+  <p id="mensagem-avaliacao" style="
+    margin:10px 0 0;
+    font-size:14px;
+    color:inherit;
+    opacity:0.8;
+  ">
+    Clique no coração para avaliar
+  </p>
+</div>
+
+<script>
+  const coracao = document.getElementById("coracao-avaliacao");
+  const mensagem = document.getElementById("mensagem-avaliacao");
+
+  coracao.addEventListener("click", function () {
+    coracao.textContent = "♥";
+    coracao.style.color = "#e63973";
+    coracao.style.transform = "scale(1.2)";
+    mensagem.textContent = "Obrigada pela sua avaliação! 💗";
+
+    setTimeout(() => {
+      coracao.style.transform = "scale(1)";
+    }, 200);
+  });
+</script>
+
 <!-- ============ RUÍDO / GRÃO DE FUNDO ============ -->
 <div class="grain" aria-hidden="true"></div>
 
